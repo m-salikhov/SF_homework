@@ -38,7 +38,7 @@
 // Задание 10.2
 
 
-// let x = '5';
+// let x = 10.2;
 
 // if (typeof (x) == 'string') {
 //     console.log('x - строка');
@@ -97,12 +97,16 @@
 
 // Вариант с методом every
 
-// let arr1 = [5, 5, 5, '5'];
+// let arr = [5, 5, 5, '5'];
 
 // function equalCheck(element) {
-//     return element === arr1[0];
+//     return element === arr[0];
 // }
-// console.log(arr1.every(equalCheck));
+// console.log(arr.every(equalCheck));
+
+// вариант со стрелочной функцией
+
+// console.log(arr.every(item => arr[0] === item));
 
 
 // задание 10.7
@@ -140,3 +144,5 @@
 // randMap.forEach((value, key, map) => {
 //     console.log(`Ключ - ${key}, зачение - ${value}`);
 // });
+
+
