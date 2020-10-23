@@ -97,8 +97,6 @@
 
 // Вариант с методом every
 
-// let arr = [5, 5, 5, '5'];
-
 // function equalCheck(element) {
 //     return element === arr[0];
 // }
