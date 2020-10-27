@@ -98,7 +98,7 @@
 // Вариант с методом every
 
 // function equalCheck(element) {
-//     return element === arr[0];
+    // return element === arr[0];
 // }
 // console.log(arr.every(equalCheck));
 
