@@ -1,4 +1,4 @@
-// 'use strict'
+'use strict'
 
 // let arr5 = [3, 4, -6, 10, 'string', 8, 99];
 // let amNum = 0;
@@ -128,46 +128,64 @@
 // })
 
 
-let randomArr = [33, -100, 'apple', 0, 3.4, 4, null, 117, true, 1024,'', NaN, [2, 5], 56, 13, -Infinity, 0, false];
-let dasdas = [4, 0, true, -10, 5*5, null, 13, 37, 22];
-checkEqual(dasdas);
-// let amountEvenNumber = 0;
-// let amountOddNumber = 0;
-// let amountZeros = 0;
+// let randomArr = [33, -100, 'apple', 0, 3.4, 4, null, 117, '11', true, 1024,'', NaN, [2, 5], 56, 13, -Infinity, 0, false];
 
-// for (let i = 0; i < randomArr.length; i++) {
-//     if (randomArr[i] === 0) {
-//         amountZeros++;
-//     } else if (typeof(randomArr[i]) !== 'number' || isNaN(randomArr[i]) || !Number.isInteger(randomArr[i])) {
-//     } else if (randomArr[i] % 2 == 0) {
-//         amountEvenNumber++;
-//     } else if (randomArr[i] % 2 !== 0) {
-//         amountOddNumber++;
+// function getAmountNumbers(arr) {
+//     let amountEvenNumber = 0;
+//     let amountOddNumber = 0;
+//     let amountZeros = 0;
+//     for (let i = 0; i < randomArr.length; i++) {
+//         if (Number.isInteger(arr[i])) {
+//             if (randomArr[i] === 0) amountZeros++;
+//             else (arr[i] % 2 == 0) ? amountEvenNumber++ : amountOddNumber++;
+//         }
 //     }
+//     console.log(amountEvenNumber);
+//     console.log(amountOddNumber);
+//     console.log(amountZeros);
 // }
-// console.log(amountZeros);
-// console.log(amountEvenNumber);
-// console.log(amountOddNumber);
 
-function checkEqual(arr) {
-  let amountEvenNumber = 0;
-  let amountOddNumber = 0;
-  let amountZeros = 0;
-  for (let i = 0; i < randomArr.length; i++) {
-    if (arr[i] === 0) {
-        amountZeros++;
-    } else if (typeof(arr[i]) !== 'number' || isNaN(arr[i]) || !Number.isInteger(arr[i])) {
-    } else if (arr[i] % 2 == 0) {
-        amountEvenNumber++;
-    } else if (arr[i] % 2 !== 0) {
-        amountOddNumber++;
-    }
-}
-console.log(amountZeros);
-console.log(amountEvenNumber);
-console.log(amountOddNumber);
-}
+// getAmountNumbers(randomArr);
 
-checkEqual(randomArr);
+// function checkPrimeNum (a) {
+//     if ( a < 0 || a > 1000 || !Number.isInteger(a)) return console.log('данные не верны');
+//     else if (a == 0 || a == 1) return console.log(`${a} - не является простым числом`);
+//     for (let i =2; i < a; i++ ) {
+//         if (a % i == 0) return console.log(`${a} - составное число`);
+//         else return console.log(`${a} - простое число`)
+//     }
+
+// }
+
+// checkPrimeNum(1000);
+// checkPrimeNum(1.5);
+// checkPrimeNum(1);
+// checkPrimeNum(37);
 
 
+// function printNumbers(from, to) {
+//     let i = from;
+
+//     let timerId = setInterval(function() {
+//     console.log(i);
+//     if (i == to) {
+//         clearInterval(timerId);
+//     }
+//     i++;
+//     }, 1000);
+// }
+
+// printNumbers(5, 15);
+
+// Напишите функцию, которая принимает два натуральных числа x и n и возвращает x в степени n. Иначе говоря, умножает x на себя n раз и возвращает результат.
+
+// Используйте Arrow Function синтаксис.
+
+// Протестируйте функцию на любых значениях и выведите результат в консоль.
+
+// let getNumberDeegree = (x, n) => { 
+//     if (x > 0 && n > 0 && Number.isInteger(x) && Number.isInteger(n)) console.log(x ** n)
+//     else console.log('данные не верны');
+// }
+
+// getNumberDeegree(10.3, 3);
