@@ -40,13 +40,13 @@
 
 // let x = 10.2;
 
-// if (typeof (x) == 'string') {
+// if (typeof(x) == 'string') {
 //     console.log('x - строка');
 // } else if (isNaN(x)) {
 //     console.log('тип х не определен');
-// } else if (typeof (x) == 'number') {
+// } else if (typeof(x) == 'number') {
 //     console.log('x - число');
-// } else if (typeof (x) == 'boolean') {
+// } else if (typeof(x) == 'boolean') {
 //     console.log('x - логический тип');
 // } else {
 //     console.log('тип x не определен');
