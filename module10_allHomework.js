@@ -34,6 +34,8 @@
 //     console.log (anyNum + ' - нечетное число');
 // }
 
+// Оба варианта правильные, но второй мне нравится больше, потому что более лакончиный и универсальный :)
+
 
 // Задание 10.2
 
@@ -61,6 +63,11 @@
 // anyStrSplit.reverse();
 // let anyStrReverse = anyStrSplit.join('');
 // console.log(anyStrReverse);
+
+// Решение верное, но можно записать то же самое короче: 
+
+let str = 'Hello';
+let reverseString = str.split('').reverse().join('');
 
 
 // Задание 10.4
@@ -106,29 +113,34 @@
 
 // console.log(arr.every(item => arr[0] === item));
 
+// Все варианты верные :)
+
 
 // задание 10.7
 
 
-// let randomArr = [33, -100, 'apple', 0, 3.4, 4, null, 117, true, 1024,'', NaN, [2, 5], 56, 13, -Infinity, 0, false];
+let randomArr = [33, -100, 'apple', 0, 3.4, 4, null, 117, true, 1024,'', NaN, [2, 5], 56, 13, -Infinity, 0, false];
 
-// let amountEvenNumber = 0;
-// let amountOddNumber = 0;
-// let amountZeros = 0;
+let amountEvenNumber = 0;
+let amountOddNumber = 0;
+let amountZeros = 0;
 
-// for (let i = 0; i < randomArr.length; i++) {
-//     if (randomArr[i] === 0) {
-//         amountZeros++;
-//     } else if (typeof(randomArr[i]) !== 'number' || isNaN(randomArr[i]) || !Number.isInteger(randomArr[i])) {
-//     } else if (randomArr[i] % 2 == 0) {
-//         amountEvenNumber++;
-//     } else if (randomArr[i] % 2 !== 0) {
-//         amountOddNumber++;
-//     }
-// }
-// console.log(amountZeros);
-// console.log(amountEvenNumber);
-// console.log(amountOddNumber);
+for (let i = 0; i < randomArr.length; i++) {
+    if (typeof(randomArr[i]) === 'number' && !isNaN(randomArr[i]) && Number.isInteger(randomArr[i])) {
+        if (randomArr[i] === 0) {
+            amountZeros++;
+        } else if (randomArr[i] % 2 === 0) {
+            amountEvenNumber++;
+        } else {
+            amountOddNumber++;
+        }
+    }
+}
+console.log(amountZeros);
+console.log(amountEvenNumber);
+console.log(amountOddNumber);
+
+// Всё верно, но я бы перегруппировала условия в if, чтобы не было пустых блоков условия и структура была более логичной и понятной. Выше в коде исправила
 
 
 // Задание 10.8
