@@ -217,3 +217,54 @@
 
 // console.log(getSumRes(15, 20));
 
+let person = {
+  name: 'Maks',
+  age: 32
+}
+
+let user = Object.create(person);
+
+user.city = 'Moscow';
+user.married = false;
+
+// function printOwnValues(item) {
+//   for(let key in item){
+//     if (item.hasOwnProperty(key)) {
+//       console.log(key,":",item[key]); 
+//     }
+//   }
+// }
+
+// printOwnValues(user);
+// printOwnValues(person);
+
+// function findKey(item, num){
+//   for(let key in item)
+//     if (item[key] == num) return console.log(key);
+// }
+// findKey(user, 32);
+
+// Написать функцию, которая принимает в качестве аргументов строку и объект, а затем проверяет есть ли у переданного объекта свойство с данным именем. Функция должна возвращать true или false.
+
+// function checkNameProp(obj, string){
+//   for(let key in obj){
+//     if (key == string) return true;
+//   }
+//   return false;
+// }
+// console.log(checkNameProp(user, 'age'));
+
+// function createEmptyObj(){
+//   return Object.create(null);
+// }
+
+// let emptyObj = createEmptyObj();
+// console.log(emptyObj);
+// console.log(typeof(emptyObj));
+
+// console.log('true' == true);
+
+function checkNameProp(name, obj){
+  return name in obj;
+}
+console.log(checkNameProp('age', user));
