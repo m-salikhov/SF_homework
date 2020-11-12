@@ -104,3 +104,66 @@ const ariston6013B = new WashingMachine ('Ariston', '6013B', 'Russia', 7, 10);
 console.log(ariston6013B);
 ariston6013B.getWaterCapacity();
 ariston6013B.getPower(220, 10);
+
+
+// Задание 12.5
+
+
+class ElectricDevice {
+    constructor (brand, model, country) {
+        this.brand = brand,
+        this.model = model,
+        this.madeIn = country,
+        this.isOn = false
+    }
+  
+    getPower(voltage, amperage){
+        console.log(`Power of the ${this.brand} ${this.model} is ${voltage * amperage} W`);
+    }
+  
+    turnOn(connect){ //Этот метод включает\выключает прибор
+        if (connect == true) {this.isOn = true;
+            console.log(`${this.brand} ${this.model} is on`);
+        }
+        else if (connect == false) {this.isOn = false;
+            console.log(`${this.brand} ${this.model} is off`);
+        }
+    }
+}
+  
+class ElectricKettle extends ElectricDevice {
+    constructor(brand, model, country, V) {
+        super(brand, model, country)
+        this.V = V + ' L';
+    }
+  
+    checkTemperature() {
+        if (this.isOn == true) console.log(`${this.brand} ${this.model} is hot!`);
+        else console.log(`${this.brand} ${this.model} is cold`)
+    }
+}
+  
+let boschTWK7805 = new ElectricKettle('Bosch', 'TWK7805', 'Germany', 2);
+
+console.log(boschTWK7805);
+boschTWK7805.getPower(220, 10);
+boschTWK7805.checkTemperature();
+boschTWK7805.turnOn(true);
+boschTWK7805.checkTemperature()
+
+class ElectricStove extends ElectricDevice {
+    constructor(brand, model, country, grill) {
+        super(brand, model, country)
+         this.grill = grill;
+    }
+  
+    checkGrill() {
+        if (this.grill == true) console.log(`${this.brand} ${this.model} have grill :)`);
+        else console.log(`${this.brand} ${this.model} don't have grill :(`)
+    }
+}
+  
+let ZanussiH1W = new ElectricStove('Zanussi', 'ZCV 9540 H1W', 'Romania', false);
+console.log(ZanussiH1W);
+ZanussiH1W.checkGrill();
+ZanussiH1W.getPower(200, 12);
