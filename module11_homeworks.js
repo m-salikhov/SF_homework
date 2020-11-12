@@ -30,11 +30,9 @@
 //     else if (a == 0 || a == 1) return console.log(`${a} - ни простое, ни составное число`);
 
 //     for (let i = 2; i < a; i++ ) {
-//         for (let k = 2; k < i; k++) {
-//             if (a % k == 0) return console.log (`${a} - составное число`);
-//         }
+//         if (a % i === 0) return console.log (`${a} - составное число`);
 //     }
-//     return console.log(`${a} - простое число`)
+//     console.log(`${a} - простое число`)
 // }
 
 // checkPrimeNum(1.5);
@@ -43,6 +41,7 @@
 // checkPrimeNum(37);
 // checkPrimeNum(1000);
 // checkPrimeNum(2);
+
 
 
 // // задание 11.3
