@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 // let person = {
 //   name: 'Maks',
@@ -13,7 +13,7 @@
 // function printOwnValues(item) {
 //   for(let key in item){
 //     if (item.hasOwnProperty(key)) {
-//       console.log(key,":",item[key]); 
+//       console.log(key,":",item[key]);
 //     }
 //   }
 // }
@@ -83,17 +83,13 @@
 // console.log(user1.fullName);
 // console.log(user1);
 
-
-
-
 // function isPrime(num) {
 //   for(let i = 2, s = Math.sqrt(num); i <= s; i++)
-//       if(num % i === 0) return false; 
+//       if(num % i === 0) return false;
 //   return num > 1;
 // }
 
 // console.log(isPrime(11))
-
 
 // console.log(isPrime);
 
@@ -180,7 +176,6 @@
 
 // console.log(user);
 
-
 // const person = {
 //   name: 'Maks',
 //   getFullName: function(lastName) {
@@ -201,7 +196,7 @@
 // Car.prototype.buy = function(price) {
 //   if(price < 1000) console.log('Can buy');
 //   else console.log('cant buy')
-// } 
+// }
 // let opel = new Car('opel', 'astra');
 
 // opel.buy(100);
@@ -223,8 +218,6 @@
 // Candy.prototype.turnOn = function turnOn(a){
 //   if (a == true) this.isOn = true;
 // }
-
-
 
 // // const twix = new Candy('twix');
 // // const snickers = new Candy('snickers');
@@ -255,8 +248,6 @@
 // console.log(snickers);
 // console.log(snickers.taste);
 
-
-
 // function Device() {
 // }
 // Device.prototype.turnOn = function turnOn(connect){
@@ -276,7 +267,7 @@
 // CoffeMaker.prototype = new Device();
 // CoffeMaker.prototype.sayHi = function() {
 //   console.log('hi');
-// } 
+// }
 
 // const DeLOngA300 = new CoffeMaker('DeLOng', 'A300', 'Japan');
 // console.log(DeLOngA300);
@@ -284,7 +275,6 @@
 // console.log(DeLOngA300);
 // DeLOngA300.getPower(220, 5);
 // DeLOngA300.sayHi()
-
 
 // function Device(brand, model, country) {
 //   this.brand = brand,
@@ -313,7 +303,7 @@
 // CoffeMaker.prototype = new Device();
 // CoffeMaker.prototype.sayHi = function() {
 //   console.log(`Hi! I am ${this.brand} ${this.model}`);
-// } 
+// }
 
 // const philipsHD7459 = new CoffeMaker('Philips', 'HD7459', 'Netherlands', 'drip');
 // const arieteMA11 = new CoffeMaker('Ariete', '11 Moka Aroma', 'China', 'geyser');
@@ -338,7 +328,7 @@
 // WashingMachine.prototype = new Device();
 // WashingMachine.prototype.getWaterCapacity = function() {
 //   console.log(`Water consumption of ${this.brand} ${this.model} is ${this.waterСonsumption} L`);
-// } 
+// }
 
 // const ariston6013B = new WashingMachine ('Ariston', '6013B', 'Russia', 7, 10);
 
@@ -417,7 +407,6 @@
 // let rabbit = new Rabbit("Белый кролик", 10);
 // console.log(rabbit)
 
-
 // function Device(brand, model, country) {
 //   this.brand = brand,
 //   this.model = model,
@@ -438,14 +427,14 @@
 
 // function CoffeMaker (brand, model, country, type) {
 //   Device.call(this, brand, model, country );
-  
+
 //   this.type = type
 // }
 
 // CoffeMaker.prototype = new Device();
 // CoffeMaker.prototype.sayHi = function() {
 //   console.log(`Hi! I am ${this.brand} ${this.model}`);
-// } 
+// }
 
 // const philipsHD7459 = new CoffeMaker('Philips', 'HD7459', 'Netherlands', 'drip');
 // const arieteMA11 = new CoffeMaker('Ariete', '11 Moka Aroma', 'China', 'geyser');
@@ -470,7 +459,7 @@
 // WashingMachine.prototype = new Device();
 // WashingMachine.prototype.getWaterCapacity = function() {
 //   console.log(`Water consumption of ${this.brand} ${this.model} is ${this.waterСonsumption} L`);
-// } 
+// }
 
 // const ariston6013B = new WashingMachine ('Ariston', '6013B', 'Russia', 7, 10);
 
@@ -478,60 +467,65 @@
 // // ariston6013B.getWaterCapacity();
 // // ariston6013B.getPower(220, 10);
 
-// class ElectricDevice {
-//   constructor (brand, model, country) {
-//   this.brand = brand,
-//   this.model = model,
-//   this.madeIn = country,
-//   this.isOn = false
-//   }
+class ElectricDevice {
+  constructor(brand, model, country) {
+    (this.brand = brand),
+      (this.model = model),
+      (this.madeIn = country),
+      (this.isOn = false);
+  }
 
-//   getPower(voltage, amperage){
-//     console.log(`Power of the ${this.brand} ${this.model} is ${voltage * amperage} W`);
-//   }
+  getPower(voltage, amperage) {
+    console.log(
+      `Power of the ${this.brand} ${this.model} is ${voltage * amperage} W`
+    );
+  }
 
-//   turnOn(connect){ //Этот метод включает\выключает прибор
-//     if (connect == true) {this.isOn = true;
-//         console.log(`${this.brand} ${this.model} is on`);
-//     }
-//     else if (connect == false) {this.isOn = false;
-//         (`${this.brand} ${this.model} is off`);
-//     }
-//   }
-// }
+  turnOn(connect) {
+    //Этот метод включает\выключает прибор
+    if (connect == true) {
+      this.isOn = true;
+      console.log(`${this.brand} ${this.model} is on`);
+    } else if (connect == false) {
+      this.isOn = false;
+      `${this.brand} ${this.model} is off`;
+    }
+  }
+}
 
-// class ElectricKettle extends ElectricDevice {
-//   constructor(brand, model, country, V) {
-//     super(brand, model, country)
-//     this.V = V + ' L';
-//   }
+class ElectricKettle extends ElectricDevice {
+  constructor(brand, model, country, V) {
+    super(brand, model, country);
+    this.V = V + " L";
+  }
 
-//   checkTemperature() {
-//     if (this.isOn == true) console.log(`${this.brand} ${this.model} is hot!`);
-//     else console.log(`${this.brand} ${this.model} is cold`)
-//   }
-// }
+  checkTemperature() {
+    if (this.isOn == true) console.log(`${this.brand} ${this.model} is hot!`);
+    else console.log(`${this.brand} ${this.model} is cold`);
+  }
+}
 
-// let boschTWK7805 = new ElectricKettle('Bosch', 'TWK7805', 'Germany', 2)
-// console.log(boschTWK7805);
-// boschTWK7805.getPower(220, 10);
-// boschTWK7805.checkTemperature();
-// boschTWK7805.turnOn(true);
-// boschTWK7805.checkTemperature()
+let boschTWK7805 = new ElectricKettle("Bosch", "TWK7805", "Germany", 2);
+console.log(boschTWK7805);
+boschTWK7805.getPower(220, 10);
+boschTWK7805.checkTemperature();
+boschTWK7805.turnOn(true);
+boschTWK7805.checkTemperature();
 
-// class ElectricStove extends ElectricDevice {
-//   constructor(brand, model, country, grill) {
-//     super(brand, model, country)
-//     this.grill = grill;
-//   }
+class ElectricStove extends ElectricDevice {
+  constructor(brand, model, country, grill) {
+    super(brand, model, country);
+    this.grill = grill;
+  }
 
-//   checkGrill() {
-//     if (this.grill == true) console.log(`${this.brand} ${this.model} have grill :)`);
-//     else console.log(`${this.brand} ${this.model} don't have grill :(`)
-//   }
-// }
+  checkGrill() {
+    if (this.grill == true)
+      console.log(`${this.brand} ${this.model} have grill :)`);
+    else console.log(`${this.brand} ${this.model} don't have grill :(`);
+  }
+}
 
-// let ZanussiH1W = new ElectricStove('Zanussi', 'ZCV 9540 H1W', 'Romania', false);
-// console.log(ZanussiH1W);
-// ZanussiH1W.checkGrill();
-// ZanussiH1W.getPower(200, 12);
+let ZanussiH1W = new ElectricStove("Zanussi", "ZCV 9540 H1W", "Romania", false);
+console.log(ZanussiH1W);
+ZanussiH1W.checkGrill();
+ZanussiH1W.getPower(200, 12);
