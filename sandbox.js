@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // let person = {
 //   name: 'Maks',
@@ -467,65 +467,144 @@
 // // ariston6013B.getWaterCapacity();
 // // ariston6013B.getPower(220, 10);
 
-class ElectricDevice {
-  constructor(brand, model, country) {
-    (this.brand = brand),
-      (this.model = model),
-      (this.madeIn = country),
-      (this.isOn = false);
-  }
+// class ElectricDevice {
+//   constructor(brand, model, country) {
+//     (this.brand = brand),
+//       (this.model = model),
+//       (this.madeIn = country),
+//       (this.isOn = false);
+//   }
 
-  getPower(voltage, amperage) {
-    console.log(
-      `Power of the ${this.brand} ${this.model} is ${voltage * amperage} W`
-    );
-  }
+//   getPower(voltage, amperage) {
+//     console.log(
+//       `Power of the ${this.brand} ${this.model} is ${voltage * amperage} W`
+//     );
+//   }
 
-  turnOn(connect) {
-    //Этот метод включает\выключает прибор
-    if (connect == true) {
-      this.isOn = true;
-      console.log(`${this.brand} ${this.model} is on`);
-    } else if (connect == false) {
-      this.isOn = false;
-      `${this.brand} ${this.model} is off`;
-    }
-  }
-}
+//   turnOn(connect) {
+//     //Этот метод включает\выключает прибор
+//     if (connect == true) {
+//       this.isOn = true;
+//       console.log(`${this.brand} ${this.model} is on`);
+//     } else if (connect == false) {
+//       this.isOn = false;
+//       `${this.brand} ${this.model} is off`;
+//     }
+//   }
+// }
 
-class ElectricKettle extends ElectricDevice {
-  constructor(brand, model, country, V) {
-    super(brand, model, country);
-    this.V = V + " L";
-  }
+// class ElectricKettle extends ElectricDevice {
+//   constructor(brand, model, country, V) {
+//     super(brand, model, country);
+//     this.V = V + " L";
+//   }
 
-  checkTemperature() {
-    if (this.isOn == true) console.log(`${this.brand} ${this.model} is hot!`);
-    else console.log(`${this.brand} ${this.model} is cold`);
-  }
-}
+//   checkTemperature() {
+//     if (this.isOn == true) console.log(`${this.brand} ${this.model} is hot!`);
+//     else console.log(`${this.brand} ${this.model} is cold`);
+//   }
+// }
 
-let boschTWK7805 = new ElectricKettle("Bosch", "TWK7805", "Germany", 2);
-console.log(boschTWK7805);
-boschTWK7805.getPower(220, 10);
-boschTWK7805.checkTemperature();
-boschTWK7805.turnOn(true);
-boschTWK7805.checkTemperature();
+// let boschTWK7805 = new ElectricKettle("Bosch", "TWK7805", "Germany", 2);
+// console.log(boschTWK7805);
+// boschTWK7805.getPower(220, 10);
+// boschTWK7805.checkTemperature();
+// boschTWK7805.turnOn(true);
+// boschTWK7805.checkTemperature();
 
-class ElectricStove extends ElectricDevice {
-  constructor(brand, model, country, grill) {
-    super(brand, model, country);
-    this.grill = grill;
-  }
+// class ElectricStove extends ElectricDevice {
+//   constructor(brand, model, country, grill) {
+//     super(brand, model, country);
+//     this.grill = grill;
+//   }
 
-  checkGrill() {
-    if (this.grill == true)
-      console.log(`${this.brand} ${this.model} have grill :)`);
-    else console.log(`${this.brand} ${this.model} don't have grill :(`);
-  }
-}
+//   checkGrill() {
+//     if (this.grill == true)
+//       console.log(`${this.brand} ${this.model} have grill :)`);
+//     else console.log(`${this.brand} ${this.model} don't have grill :(`);
+//   }
+// }
 
-let ZanussiH1W = new ElectricStove("Zanussi", "ZCV 9540 H1W", "Romania", false);
-console.log(ZanussiH1W);
-ZanussiH1W.checkGrill();
-ZanussiH1W.getPower(200, 12);
+// let ZanussiH1W = new ElectricStove("Zanussi", "ZCV 9540 H1W", "Romania", false);
+// console.log(ZanussiH1W);
+// ZanussiH1W.checkGrill();
+// ZanussiH1W.getPower(200, 12);
+
+const parser = new DOMParser();
+
+const listXML = `
+<list>
+  <student>
+    <name lang="en">
+      <first>Ivan</first>
+      <second>Ivanov</second>
+    </name>
+    <age>35</age>
+    <prof>teacher</prof>
+  </student>
+  <student>
+    <name lang="ru">
+      <first>Петр</first>
+      <second>Петров</second>
+    </name>
+    <age>58</age>
+    <prof>driver</prof>
+  </student>
+</list>
+`;
+
+const listXMLDOM = parser.parseFromString(listXML, 'text/xml');
+
+// let listNode = listXMLDOM.querySelector("list");
+// console.log(listNode)
+let nameNode = listXMLDOM.querySelectorAll('name');
+let firstNameNode = listXMLDOM.querySelectorAll('first');
+let secondNameNode = listXMLDOM.querySelectorAll('second');
+let ageNode = listXMLDOM.querySelectorAll('age');
+let profNode = listXMLDOM.querySelectorAll('prof');
+// console.log(ageNode)
+// let nameAtr = nameNode.getAttribute('lang');
+// console.log(nameNode[1].getAttribute('lang'))
+// console.log(ageNode[0].textContent)
+// console.log(+ageNode[1].textContent)
+// console.log(profNode[1].textContent)
+// console.log(firstNameNode[0]);
+
+let personsList = {
+  list: [
+    {
+      name: `${firstNameNode[0].textContent} ${secondNameNode[0].textContent}`,
+      age: +ageNode[0].textContent,
+      prof: profNode[0].textContent,
+      lang: nameNode[0].getAttribute('lang'),
+    },
+    {
+      name: `${firstNameNode[1].textContent} ${secondNameNode[1].textContent}`,
+      age: +ageNode[1].textContent,
+      prof: profNode[1].textContent,
+      lang: nameNode[1].getAttribute('lang'),
+    },
+  ],
+};
+
+// console.log(personsList);
+// console.log(personsList.list[1].age);
+
+let listStringJSON = `{
+  "list": [
+   {
+    "name": "Petr",
+    "age": "20",
+    "prof": "mechanic"
+   },
+   {
+    "name": "Vova",
+    "age": "60",
+    "prof": "pilot"
+   }
+  ]
+ }`;
+
+let list1 = JSON.parse(listStringJSON);
+
+console.log(list1);

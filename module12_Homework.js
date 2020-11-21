@@ -1,13 +1,13 @@
-"use strict";
+'use strict';
 
 let person = {
-  name: "Maks",
+  name: 'Maks',
   age: 32,
 };
 
 let user = Object.create(person);
 
-user.city = "Moscow";
+user.city = 'Moscow';
 user.married = false;
 
 // Задание 12.1
@@ -15,7 +15,7 @@ user.married = false;
 function printOwnProps(obj) {
   for (let key in obj) {
     if (obj.hasOwnProperty(key)) {
-      console.log(key, ":", obj[key]);
+      console.log(key, ':', obj[key]);
     }
   }
 }
@@ -27,7 +27,7 @@ printOwnProps(user);
 function checkNameProp(key, obj) {
   return key in obj;
 }
-console.log(checkNameProp("age", user));
+console.log(checkNameProp('age', user));
 
 // задание 12.3
 
@@ -75,12 +75,12 @@ CoffeMaker.prototype.sayHi = function () {
 };
 
 const philipsHD7459 = new CoffeMaker(
-  "Philips",
-  "HD7459",
-  "Netherlands",
-  "drip"
+  'Philips',
+  'HD7459',
+  'Netherlands',
+  'drip'
 );
-const arieteMA11 = new CoffeMaker("Ariete", "11 Moka Aroma", "China", "geyser");
+const arieteMA11 = new CoffeMaker('Ariete', '11 Moka Aroma', 'China', 'geyser');
 
 console.log(philipsHD7459);
 philipsHD7459.getPower(200, 5);
@@ -105,7 +105,7 @@ WashingMachine.prototype.getWaterCapacity = function () {
   );
 };
 
-const ariston6013B = new WashingMachine("Ariston", "6013B", "Russia", 7, 10);
+const ariston6013B = new WashingMachine('Ariston', '6013B', 'Russia', 7, 10);
 
 console.log(ariston6013B);
 ariston6013B.getWaterCapacity();
@@ -142,7 +142,7 @@ class ElectricDevice {
 class ElectricKettle extends ElectricDevice {
   constructor(brand, model, country, V) {
     super(brand, model, country);
-    this.V = V + " L";
+    this.V = V + ' L';
   }
 
   checkTemperature() {
@@ -151,7 +151,7 @@ class ElectricKettle extends ElectricDevice {
   }
 }
 
-let boschTWK7805 = new ElectricKettle("Bosch", "TWK7805", "Germany", 2);
+let boschTWK7805 = new ElectricKettle('Bosch', 'TWK7805', 'Germany', 2);
 
 console.log(boschTWK7805);
 boschTWK7805.getPower(220, 10);
@@ -172,7 +172,7 @@ class ElectricStove extends ElectricDevice {
   }
 }
 
-let ZanussiH1W = new ElectricStove("Zanussi", "ZCV 9540 H1W", "Romania", false);
+let ZanussiH1W = new ElectricStove('Zanussi', 'ZCV 9540 H1W', 'Romania', false);
 console.log(ZanussiH1W);
 ZanussiH1W.checkGrill();
 ZanussiH1W.getPower(200, 12);
