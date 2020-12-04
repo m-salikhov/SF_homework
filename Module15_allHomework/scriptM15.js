@@ -1,55 +1,6 @@
 'use strict';
 
-// const myPromise = new Promise((resolve, reject) => {
-//   if (1) {
-//     resolve('Успешное выполнение promise');
-//   } else {
-//     reject('Неуспешное выполнение promise');
-//   }
-// });
-// Функция выполнения promise
-// function usePromise() {
-//   // Создаем promise
-//   const myPromise = new Promise((resolve, reject) => {
-//     console.log('1');
-//     setTimeout(() => {
-//       console.log('2');
-//       resolve('Успешное выполнение promise');
-//     }, 4000);
-//     console.log('3');
-//   });
-
-//   console.log('4');
-//   // Выполняем promise
-//   myPromise
-//     .then((result) => {
-//       console.log('Обрабатываем resolve', result);
-//     })
-//     .catch((error) => {
-//       console.log('Обрабатываем reject', error);
-//     })
-//     .finally(() => {
-//       console.log('Выполняется всегда');
-//     });
-
-//   console.log('5');
-// }
-
-// console.log('Запускаем функцию с promise');
-// usePromise();
-// console.log('Функция выполнилась');
-// fetch('https://picsum.photos/v2/list?page=1&limit=10')
-//   .then((response) => {
-//     return response.json();
-//   })
-//   .then((data) => {
-//     console.log(data[3].author);
-//   });
-
-// console.log(localStorage);
-// localStorage.clear();
-// console.log(localStorage.getItem('res'));
-const btn = document.querySelectorAll('.j-btn-test');
+let btn = document.querySelectorAll('.j-btn-test');
 
 btn[0].addEventListener('click', () => {
   let icon = document.querySelector('.btn_icon');
@@ -70,9 +21,9 @@ btn[1].addEventListener('click', () => {
   alert(`Размеры экрана ${window.screen.width} x ${window.screen.height}`);
 });
 
-const wsUri = 'wss://echo.websocket.org/';
+let wsUri = 'wss://echo.websocket.org/';
 
-const output = document.querySelector('.output');
+let output = document.querySelector('.output');
 
 function writeToScreen(message) {
   let pre = document.createElement('p');
@@ -80,8 +31,7 @@ function writeToScreen(message) {
   output.appendChild(pre);
 }
 
-let websocket;
-websocket = new WebSocket(wsUri);
+let websocket = new WebSocket(wsUri);
 websocket.onopen = function (evt) {
   writeToScreen('Соединение установленно');
 };
@@ -98,14 +48,14 @@ websocket.onerror = function (evt) {
 };
 
 btn[2].addEventListener('click', () => {
-  const message = document.querySelector('.inp').value;
+  let message = document.querySelector('.inp').value;
   writeToScreen('<span class="message">' + message + '</span>');
   websocket.send(message);
   document.querySelector('.inp').value = '';
 });
 
 btn[3].addEventListener('click', () => {
-  if ('geolocation' in navigator) {
+  if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
       let latitude = position.coords.latitude;
       let longitude = position.coords.longitude;
@@ -118,5 +68,8 @@ btn[3].addEventListener('click', () => {
         Геолокация
       </a>`);
     });
-  }
+  } else
+    writeToScreen(
+      '<span class="response"> ' + 'местоположение недоступно' + '</span>'
+    );
 });
