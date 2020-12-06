@@ -15,7 +15,8 @@ btn.addEventListener('click', () => {
     !Number.isInteger(inp1) ||
     !Number.isInteger(inp2)
   ) {
-    return console.log('Номер страницы и/или лимит вне диапазона от 1 до 10');
+    resultNode.innerHTML = 'Номер страницы и/или лимит вне диапазона от 1 до 10';
+    return;
   }
   fetch(`https://picsum.photos/v2/list?page=${inp1}&limit=${inp2}`)
     .then((response) => {

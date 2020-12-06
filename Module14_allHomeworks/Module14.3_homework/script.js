@@ -4,7 +4,8 @@ document.querySelector('button').onclick = function () {
   let value = +document.querySelector('input').value;
   // console.log(value);
   if (value < 1 || value > 10 || !Number.isInteger(value)) {
-    console.log('Число вне диапазона');
+    // Сообщение о том, что число вне диапазона, лучше выводить не в консоль, а в документ, т.к. данное приложение уже больше рассчитано на пользователя (у нас есть интерфейс), а обычные пользователи как правило не смотрят в консоль
+    resultNode.innerHTML = 'Число вне диапазона';
   } else {
     useRequest(`https://picsum.photos/v2/list?limit=${value}`, displayResult);
   }
