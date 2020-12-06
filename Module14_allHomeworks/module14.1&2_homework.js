@@ -26,32 +26,30 @@ const listXML = `
 `;
 
 const listXMLDOM = parser.parseFromString(listXML, 'text/xml');
-
-let nameNode = listXMLDOM.querySelectorAll('name');
-let firstNameNode = listXMLDOM.querySelectorAll('first');
-let secondNameNode = listXMLDOM.querySelectorAll('second');
-let ageNode = listXMLDOM.querySelectorAll('age');
-let profNode = listXMLDOM.querySelectorAll('prof');
-
+let students = listXMLDOM.querySelectorAll('student');
 let personsList = {
-  list: [
-    {
-      name: `${firstNameNode[0].textContent} ${secondNameNode[0].textContent}`,
-      age: +ageNode[0].textContent,
-      prof: profNode[0].textContent,
-      lang: nameNode[0].getAttribute('lang'),
-    },
-    {
-      name: `${firstNameNode[1].textContent} ${secondNameNode[1].textContent}`,
-      age: +ageNode[1].textContent,
-      prof: profNode[1].textContent,
-      lang: nameNode[1].getAttribute('lang'),
-    },
-  ],
+  list: []
 };
+
+students.forEach(student => {
+  let nameNode = student.querySelector('name');
+  let firstNameNode = student.querySelector('first');
+  let secondNameNode = student.querySelector('second');
+  let ageNode = student.querySelector('age');
+  let profNode = student.querySelector('prof');
+  let person = {
+    name: `${firstNameNode.textContent} ${secondNameNode.textContent}`,
+    age: +ageNode.textContent,
+    prof: profNode.textContent,
+    lang: nameNode.getAttribute('lang'),
+  };
+  personsList.list.push(person);
+})
 
 console.log(personsList);
 console.log(personsList.list[1].age);
+
+// Не совсем верно, т.к. ваше решение подходит только для ситуации, когда мы знаем, что в xml-объекте будет только 2 узла student. В реальности, если мы получаем ответ с сервера, их может быть сколько угодно. Исправила решение на более универсальный вариант
 
 // задание 14.2
 

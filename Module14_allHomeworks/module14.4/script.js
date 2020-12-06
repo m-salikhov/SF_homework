@@ -1,6 +1,7 @@
 'use strict';
 
 let btn = document.querySelector('button');
+let resultNode = document.querySelector('.result');
 
 btn.addEventListener('click', () => {
   let inp1 = +document.querySelector('.inp1').value;
@@ -13,12 +14,11 @@ btn.addEventListener('click', () => {
     isNaN(inp1) ||
     isNaN(inp2)
   ) {
-    return console.log('Одно из чисел вне диапазона');
+    resultNode.innerHTML = 'Одно из чисел вне диапазона';
+    return;
   }
   fetch(`https://picsum.photos/${inp1}/${inp2}`)
     .then((response) => {
-      let resultNode = document.querySelector('.result');
-
       resultNode.innerHTML = `
       <div class="card">
         <img
