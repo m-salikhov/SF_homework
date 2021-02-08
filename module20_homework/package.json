@@ -1,0 +1,23 @@
+{
+  "name": "module20_homework",
+  "version": "1.0.0",
+  "description": "Homework Module 20",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass -w scss/ -o my-css-folder/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-salikhov/SF_homework.git"
+  },
+  "author": "Maksim Salikhov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/m-salikhov/SF_homework/issues"
+  },
+  "homepage": "https://github.com/m-salikhov/SF_homework#readme",
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
