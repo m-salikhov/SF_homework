@@ -1,0 +1,81 @@
+@import 'nullstyle.scss';
+
+@font-face {
+  src: url('/module21_homework/Module17+18/fonts/Roboto-Regular.ttf');
+  font-family: 'Roboto Regular';
+}
+@font-face {
+  src: url('/module21_homework/Module17+18/fonts/Roboto-Bold.ttf');
+  font-family: 'Roboto Bold';
+}
+
+$font-stack: 'Roboto Regular';
+
+body {
+  font-family: $font-stack;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 40px 100px;
+  padding-top: 30px;
+}
+
+.header__nav-and-btn {
+  display: flex;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+
+  li {
+    display: inline;
+    a {
+      padding: 0px 15px;
+      font-size: 16px;
+      color: rgba(27, 27, 27, 1);
+      &:hover {
+        color: red;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.header__nav-and-btn button {
+  padding: 12px 30px;
+  border: 1px solid rgba(27, 27, 27, 0.4);
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-left: 25px;
+  &:hover {
+    color: red;
+    cursor: pointer;
+  }
+}
+
+.image-top {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 55px;
+}
+
+.about-us {
+  margin-bottom: 80px;
+
+  h1 {
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Roboto Bold';
+  }
+
+  p {
+    font-size: 24px;
+    margin: 0px 258px;
+    text-align: center;
+  }
+}
